@@ -267,12 +267,13 @@ a:focus {
 .hero .hero-image {
   position: relative;
   text-align: right;
+  height: fit-content;
   padding-right: 75px;
 }
 
 .hero .hero-image img {
-  max-width: 80%;
-  max-height: 80%;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .hero .hero-content {
