@@ -63,7 +63,8 @@
                                 FullStack Engineer</div>
                         </div>
                         <div class="hero-btn">
-                            <a class="btn" href="#hireme">Hire Me</a>
+                            <button id="hireMeButton" class="btn btn-success">Hire Me</button>
+
                             <a class="btn" href="#contact">Contact Me</a>
                         </div>
                     </div>
@@ -575,8 +576,6 @@
             </div>
         </div>
         <!-- Footer End -->
-
-
         <!-- Back to top button -->
         <a href="#" class="btn back-to-top"><i class="fa fa-chevron-up"></i></a>
 
@@ -585,6 +584,53 @@
         <div id="loader" class="show">
             <div class="loader"></div>
         </div>
+
+        <!-- Hire me Modal -->
+        <div id="hireMeModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="hireMeModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="hireMeModalLabel">Hire Me</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="hireMeForm">
+                            <div class="form-group">
+                                <label for="service">Select Service</label>
+                                <select id="service" class="form-control" required>
+                                    <option value="web-design">Web Design</option>
+                                    <option value="ecommerce">E-commerce Development</option>
+                                    <option value="seo">SEO & Digital Marketing</option>
+                                    <option value="branding">Branding & Logo Design</option>
+                                    <option value="ui-ux">UI/UX Design</option>
+                                    <option value="mobile-app">Mobile App Development</option>
+                                    <option value="content-creation">Content Creation</option>
+                                    <option value="social-media">Social Media Management</option>
+                                    <option value="custom">Custom Project</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="hire-name">Your Name</label>
+                                <input type="text" id="hire-name" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="hire-contact">Phone or Email</label>
+                                <input type="text" id="hire-contact" class="form-control" required>
+                            </div>
+                            <div class="form-group" id="message-group" style="display: none;">
+                                <label for="hire-message">Brief Message</label>
+                                <textarea id="hire-message" class="form-control" rows="3"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
 
 
         <!-- JavaScript Libraries -->

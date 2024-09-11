@@ -83,3 +83,51 @@ $(function () {
 $("#name").focus(function () {
   $("#success").html("");
 });
+
+$(document).ready(function () {
+  $("#service").change(function () {
+    if ($(this).val() === "custom") {
+      $("#message-group").show();
+      $("#hire-message").attr("required", true);
+    } else {
+      $("#message-group").hide();
+      $("#hire-message").attr("required", false);
+    }
+  });
+
+  $("#hireMeForm").on("submit", function (event) {
+    event.preventDefault();
+
+    var service = $("#service").val();
+    var name = $("#hire-name").val();
+    var contact = $("#hire-contact").val();
+    var message = $("#hire-message").val() || "No additional message provided.";
+
+    var formData = {
+      service: service,
+      name: name,
+      contact: contact,
+      message: message,
+    };
+
+    $.ajax({
+      url: "https://formspree.io/f/xwpezypk",
+      method: "POST",
+      dataType: "json",
+      data: formData,
+      success: function () {
+        $("#hireMeModal").modal("hide");
+        alert("Your message has been sent successfully!");
+      },
+      error: function () {
+        alert(
+          "There was an error sending your message. Please try again later."
+        );
+      },
+    });
+  });
+
+  $("#hireMeButton").click(function () {
+    $("#hireMeModal").modal("show");
+  });
+});
