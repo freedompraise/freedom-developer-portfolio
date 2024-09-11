@@ -3,7 +3,7 @@ $(function () {
     "#contactFormEmail input, #contactFormEmail textarea"
   ).jqBootstrapValidation({
     preventSubmit: true,
-    submitError: function ($form, event, errors) {},
+    submitError: function ($) {},
     submitSuccess: function ($form, event) {
       event.preventDefault();
       var name = $("input#name").val();
@@ -66,10 +66,9 @@ $(function () {
   $("#contactFormWhatsApp").on("submit", function (event) {
     event.preventDefault();
     var name = $("input#name-whatsapp").val();
-    var phone = $("input#phone-whatsapp").val();
     var message = $("textarea#message-whatsapp").val();
 
-    var contactMessage = `Contact Details:\nName: ${name}\nPhone Number: ${phone}\nMessage: ${message}`;
+    var contactMessage = `Contact Details:\nName: ${name}\nMessage: ${message}`;
     var encodedMessage = encodeURIComponent(contactMessage);
     var whatsappURL = `https://wa.me/2349074577147/?text=${encodedMessage}`;
     window.location.href = whatsappURL;
