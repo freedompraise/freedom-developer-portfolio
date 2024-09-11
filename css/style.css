@@ -508,6 +508,8 @@ a:focus {
 
 .about .about-text p {
   font-size: 16px;
+  color: #000;
+  font-weight: 500;
 }
 
 .about .skills {
