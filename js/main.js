@@ -90,14 +90,16 @@
   });
 
   // Portfolior
-  var portfolioIsotope = $(".portfolio-container").isotope({
-    itemSelector: ".portfolio-item",
-    layoutMode: "fitRows",
-  });
-
   $("#portfolio-filter li").on("click", function () {
     $("#portfolio-filter li").removeClass("filter-active");
     $(this).addClass("filter-active");
-    portfolioIsotope.isotope({ filter: $(this).data("filter") });
+
+    var filterValue = $(this).attr("data-filter");
+    if (filterValue === "*") {
+      $(".portfolio-item").show("1000");
+    } else {
+      $(".portfolio-item").not(filterValue).hide("1000");
+      $(filterValue).show("1000");
+    }
   });
 })(jQuery);
